@@ -1,4 +1,7 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+export const config = {
+  runtime: 'experimental-edge' // 改为 'nodejs' 解决兼容性问题
+};
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/edge-middleware'
 import { NextRequest, NextResponse } from 'next/server'
 import { checkStrIsNotionId, getLastPartOfUrl } from '@/lib/utils'
 import { idToUuid } from 'notion-utils'
